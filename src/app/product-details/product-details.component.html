@@ -1,0 +1,57 @@
+<app-header (cartClicked)="onCartClicked()"></app-header>
+<div *ngIf="isComponentVisible">
+    <app-cart (close)="hideComponent()"></app-cart>
+</div>
+
+<!-- Product Details -->
+<div class="item-detail">
+    <div class="container" *ngIf="product">
+        <div class="img_item">
+            <div class="big_img">
+                <img [src]="bigImage" alt="">
+            </div>
+
+            <div class="sm_img">
+                <img [src]="product.img" alt="" (click)="updateBigImage(product.img)">
+                <img [src]="product.img_hover" alt="" (click)="updateBigImage(product.img_hover)">
+            </div>
+        </div>
+
+        <div class="details_item">
+            <h1>{{product.name}}</h1>
+            <div class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+            </div>
+
+            <div class="price">
+                <p><span>{{product.price}}</span></p>
+                <p class="old_price">{{product.old_price}}</p>
+            </div>
+
+            <h5>Availability: <span>In Stock</span></h5>
+            <h5>SKU: <span>Samsung C49J89: Debenhams Plus</span></h5>
+
+            <p class="text_p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate necessitatibus recusandae impedit
+                labore excepturi, hic accusamus obcaecati natus fuga at, doloribus repellendus consequuntur quaerat!
+                Nesciunt, non, architecto velit fugiat in necessitatibus quaerat perferendis officia, dolore
+                cupiditate debitis voluptatibus.</p>
+                <h4>Harry Up! Only 90 products left in stock.</h4>
+
+                <button (click)="addToCart(product)">Add To Cart <i class="fa-solid fa-cart-arrow-down"></i></button>
+
+                <div class="icons">
+                    <span><i class="fa-regular fa-heart"></i></span>
+                    <span><i class="fa-solid fa-sliders"></i></span>
+                    <span><i class="fa-solid fa-print"></i></span>
+                    <span><i class="fa-solid fa-share-nodes"></i></span>
+                </div>
+        </div>
+    </div>
+</div>
+<br><br>
+<app-sale-products></app-sale-products>
+<app-footer></app-footer>

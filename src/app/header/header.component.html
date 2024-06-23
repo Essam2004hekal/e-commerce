@@ -1,0 +1,48 @@
+<header>
+    <div class="container top-nav">
+        <a href="#" class="logo"><img src="assets/images/logo-black.png" alt=""></a>
+        <form action="" class="search">
+            <input type="search" name="search" [(ngModel)]="searchTerm" (input)="onSearchInputChange()" placeholder="Search for products...">
+            <button type="submit">Search</button>
+        </form>
+        <div class="search-results" *ngIf="searchResults.length">
+            <ul *ngFor="let product of products">
+              <li *ngFor="let result of searchResults" routerLink="/product-details" (click)="viewProduct(product.id)">
+                {{ result.name }}
+                </li>
+            </ul>
+        </div>
+        
+        <div class="cart-header" (click)="onButtonClick()">
+            <div routerLink="/cart" class="icon_cart">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span class="count_item">{{cartItemCount}}</span>
+            </div>
+            <div class="total_price">
+                <p>My Cart:</p>
+                <p class="price_cart_Head">${{cartTotalPrice}}</p>
+            </div>
+        </div>
+    </div>
+
+    <nav>
+        <div class="links container">
+            <span (click)="toggleMenu()"><i class="fa-solid fa-bars btn_open_menu" ></i></span>
+            <ul [class.menu-open]="isMenuOpen">
+                <span (click)="toggleMenu()"><i class="fa-regular fa-circle-xmark btn_close_menu"></i></span>
+                <img class="logo_menu" src="assets/images/logo-black.png" alt="">
+
+                <li [class.active]="activeLink === 'home'"  routerLink="/home"><a>Home</a></li>
+                <li [class.active]="activeLink === 'all-products'"  routerLink="/all-products"><a>All Products</a></li>
+                <li [class.active]="activeLink === 'about'"  routerLink="/about"><a>About Us</a></li>
+                <li [class.active]="activeLink === 'contact'"  routerLink="/contact"><a>Contact</a></li>
+            </ul>
+
+            <div class="loging_signup">
+                <a routerLink="/login" *ngIf="showLoginButton">Login <i class="fa-solid fa-right-to-bracket"></i></a>
+                <a routerLink="/signup" *ngIf="showSignupButton">Sign up <i class="fa-solid fa-user-plus"></i></a>
+            </div>
+        </div>
+    </nav>
+</header>
+

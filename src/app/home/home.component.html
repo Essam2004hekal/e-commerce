@@ -1,0 +1,76 @@
+<app-header (cartClicked)="onCartClicked()"></app-header>
+<div *ngIf="isComponentVisible">
+    <app-cart (close)="hideComponent()"></app-cart>
+</div>
+<app-slider></app-slider>
+<app-features></app-features>
+<app-sale-products></app-sale-products>
+<!-- Banner 2-->
+<div class="banner">
+    <div class="container">
+        <div class="banner_img">
+            <div class="glass_hover">
+                <a href="#"></a>
+                    <img src="assets/images/banner/banner-4.jpg" alt="">
+            </div>
+        </div>
+
+        <div class="banner_img">
+            <div class="glass_hover">
+                <a href="#"></a>
+                    <img src="assets/images/banner/banner-5.jpg" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Banner 3-->
+<div class="banner banner_three">
+    <div class="container">
+        <div class="banner_img">
+            <div class="glass_hover">
+                <a href="#"></a>
+                    <img src="assets/images/banner/banner-6.jpg" alt="">
+            </div>
+        </div>
+
+        <div class="banner_img">
+            <div class="glass_hover">
+                <a href="#"></a>
+                    <img src="assets/images/banner/banner-7.jpg" alt="">
+            </div>
+        </div>
+
+        <div class="banner_img">
+            <div class="glass_hover">
+                <a href="#"></a>
+                    <img src="assets/images/banner/banner-8.jpg" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Newsletter -->
+<div class="newsletter">
+    <div class="container">
+        <div class="text">
+            <img src="assets/images/icon_email.png" alt="">
+            <div class="content">
+                <h4>Sign up to newsletter</h4>
+                <p>Get email updates about our latest shop...and receive</p>
+                <h6>$30 Coupon For First Shopping</h6>
+            </div>
+        </div>
+
+        <form action="" class="newsletter_form">
+            <input type="email" name="" id="" placeholder="Enter Your Email Here">
+            <button type="submit">Subscribe</button>
+        </form>
+    </div>
+</div>
+
+<!-- Back To Top -->
+<div class="back_to_top" (click)="back_top()">
+    <p>Back To Top</p>
+</div>
+<app-footer></app-footer>

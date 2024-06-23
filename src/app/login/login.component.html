@@ -1,0 +1,42 @@
+<app-header (cartClicked)="onCartClicked()"></app-header>
+<div *ngIf="isComponentVisible">
+    <app-cart (close)="hideComponent()"></app-cart>
+</div>
+
+<section class="login sec_form">
+    <div class="form_container">
+        <p class="title">Welcome Back</p>
+
+        <form action="" class="form">
+
+            <input type="email" placeholder="Email">
+            <input type="password" placeholder="Password">
+            <p class="page_link"><a href="" class="page-link-label">Forgot Password?</a></p>
+            
+            <button class="form_btn">Login</button>
+        </form>
+
+        <p class="sign-up-label">
+            Don't Have Account? <a routerLink="/signup" class="sign-up-link">Sign Up</a>
+        </p>
+
+
+        <div class="buttons-container">
+            <div class="apple-login-button">
+                <i class="fa-brands fa-apple"></i>
+                <span>Login with Apple</span>
+            </div>
+
+            <div class="google-login-button">
+                <i class="fa-brands fa-google"></i>
+                <span>Login with Google</span>
+            </div>
+        </div>
+
+
+
+    </div>
+</section>
+
+
+<app-footer></app-footer>

@@ -1,0 +1,35 @@
+<app-header (cartClicked)="onCartClicked()"></app-header>
+<div *ngIf="isComponentVisible">
+    <app-cart (close)="hideComponent()"></app-cart>
+</div>
+
+<div class="responsive-container-block bigContainer">
+    <div class="responsive-container-block Container bottomContainer">
+        <div class="allText bottomText">
+            <p class="text-blk headingText">
+                About
+            </p>
+            <p class="text-blk subHeadingText">
+                We build to your bespoke
+            </p>
+            <p class="text-blk description">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fermentum pulvinar ullamcorper suspendisse ac
+                eget. Pellentesque tempus leo in ullamcorper quis vestibulum ligula elementum ut. Congue in dignissim
+                tincidunt ut dolor eu. Mi, eget posuere vitae sed purus nisl lorem.
+            </p>
+            <a>
+                <button class="explore">
+                    View More
+                </button>
+            </a>
+        </div>
+        <div class="videoContainer">
+            <iframe allowfullscreen="allowfullscreen" class="mainVideo" controls="controls"
+                src="https://www.youtube.com/embed/svg%3E?">
+            </iframe>
+            
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

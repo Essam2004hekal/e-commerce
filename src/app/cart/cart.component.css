@@ -1,0 +1,113 @@
+/* cart */
+.cart {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+    width: 300px;
+    z-index: 100;
+    padding: 20px;
+    border-left: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    transition: 0.3s ease;
+    z-index: 1001;
+    overflow-x: scroll;
+}
+.cart .top_cart {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.cart .top_cart .close_cart svg {
+    font-size: 18px;
+    cursor: pointer;
+}
+.cart .top_cart h3 {
+    font-size: 16px;
+}
+.cart .top_cart h3 span {
+    font-size: 12px;
+    color: var(--txt-color);
+    font-weight: normal;
+}
+.cart .items_in_cart {
+    padding: 10px 0;
+    border-block: 1px solid var(--border-color);
+    margin-block: 10px;
+    height: 100%;
+}
+.cart .item_cart {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+.cart .item_cart:last-child {
+    margin-bottom: 0;
+}
+.cart .item_cart img {
+    width: 80px;
+}
+.cart .item_cart h4 {
+    margin-bottom: 10px;
+    font-weight: 400;
+    font-size: 16px;
+}
+.cart .item_cart .delete_item {
+    outline: none;
+    border: none;
+}
+.cart .item_cart .delete_item svg {
+    font-size: 22px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.cart .item_cart .delete_item:hover {
+    color: var(--dark-red);
+    transform: scale(1.2);
+}
+.cart .bottom_cart .total {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+.cart .bottom_cart .total .price_cart_total {
+    color: var(--main-color);
+}
+.cart .button_cart {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.cart .button_cart .btn_cart {
+    border: 2px solid var(--main-color);
+    border-radius: 5px;
+    color: var(--dark-color);
+    padding: 10px 0;
+    text-align: center;
+    font-size: 16px;
+    text-transform: uppercase;
+    cursor: pointer;
+    background: var(--main-color);
+    transition: 0.3s ease-in;
+}
+.cart .button_cart .btn_cart:hover,
+.cart .button_cart .trans_bg {
+    background: transparent;
+}
+.cart .button_cart .trans_bg:hover {
+    background: var(--main-color);
+}
+
+
+/* Responsive */
+
+@media (max-width: 500px) {
+    .cart {
+        width: 100%;
+    }
+}

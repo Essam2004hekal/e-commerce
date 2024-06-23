@@ -1,0 +1,63 @@
+<app-header (cartClicked)="onCartClicked()"></app-header>
+<div *ngIf="isComponentVisible">
+    <app-cart (close)="hideComponent()"></app-cart>
+</div>
+
+
+<div class="slide slide-sale">
+    <div class="container">
+        <div class="sale_sec">
+            <div class="top_slide">
+                <h1>Experience the Future of Technology with Our Topic</h1>
+                <p>Find everything you need to transform your home into a smart connected space.Our Topic Store offers a wide range of devices to fit your needs</p>
+                <h4>All <span>Products</span></h4>
+            </div>
+
+            <div class="products">
+                <div class="item" *ngFor="let product of products">
+                    <div class="product">
+                        <div class="icons">
+                            <span (click)="addToCart(product)"><i class="fa-solid fa-cart-plus"></i></span>
+                            <span><i class="fa-solid fa-heart"></i></span>
+                            <span><i class="fa-solid fa-share"></i></span>
+                        </div>
+                        <span *ngIf="product.old_price" class="sale_present">
+                            {{ getDiscountPercentage(product.old_price, product.price) }}%
+                        </span>
+
+                        <div class="img_product">
+                            <a  routerLink="/product-details" (click)="viewProduct(product.id)">
+                                <img [src]="product.img" alt="">
+                                <img [src]="product.img_hover" alt="" class="img_hover">
+                            </a>
+                        </div>
+
+                        <h3 class="name_product"><a  routerLink="/product-details" (click)="viewProduct(product.id)">
+                            {{ product.name }}
+                        </a></h3>
+
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+
+                        <div class="price">
+                            <p><span>${{ product.price }}</span></p>
+                            <p *ngIf="product.old_price" class="old_price">${{ product.old_price }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Back To Top -->
+<div class="back_to_top" (click)="back_top()">
+    <p>Back To Top</p>
+</div>
+<app-footer></app-footer>

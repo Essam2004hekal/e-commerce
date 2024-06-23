@@ -1,0 +1,213 @@
+/* Banner */
+
+.banner {
+    margin: 50px 0;
+}
+.banner .container {
+    display: flex;
+    justify-content: space-between;
+}
+.banner .banner_img {
+    width: 48%;
+    position: relative;
+}
+.banner .banner_img img {
+    width: 100%;
+}
+.banner .glass_hover {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+.banner .glass_hover::after {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(50deg , transparent 50% ,
+    rgba(255,255,255,0.1) 60% , rgba(255,255,255,0.5) 70% , 
+    transparent 71%);
+    background-size: 200% 100%;
+    background-position: 200% 0;
+    transition: 0.8s;
+}
+.banner .banner_img:hover .glass_hover::after {
+    background-position: -20% 0;
+}
+.banner .banner_img a {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+
+
+/* Banner 3*/
+
+.banner.banner_three {
+    margin: 50px 0;
+}
+.banner.banner_three .container {
+    display: flex;
+    justify-content: space-between;
+}
+.banner.banner_three .banner_img {
+    width: 31%;
+    position: relative;
+}
+.banner.banner_three .banner_img img {
+    width: 100%;
+}
+.banner.banner_three .glass_hover {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+.banner.banner_three .glass_hover::after {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(50deg , transparent 50% ,
+    rgba(255,255,255,0.1) 60% , rgba(255,255,255,0.5) 70% , 
+    transparent 71%);
+    background-size: 200% 100%;
+    background-position: 200% 0;
+    transition: 0.8s;
+}
+.banner.banner_three .banner_img:hover .glass_hover::after {
+    background-position: -20% 0;
+}
+.banner.banner_three .banner_img a {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+
+
+
+/* Newsletter */
+
+.newsletter {
+    background: #fff;
+}
+.newsletter .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+}
+.newsletter .text {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.newsletter .text img {
+    width: 90px;
+}
+.newsletter .text h4 {
+    font-size: 19px;
+    font-weight: 500;
+}
+.newsletter .text p {
+    margin: 10px 0;
+}
+.newsletter .text h6 {
+    font-size: 18px;
+    font-weight: normal;
+}
+.newsletter form.newsletter_form {
+    width: 40%;
+    border: 2px solid var(--main-color);
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+}
+.newsletter form.newsletter_form input {
+    padding: 10px 175px 10px 10px;
+    outline: none;
+    border: none;
+    width: 100%;
+}
+.newsletter form.newsletter_form button {
+    background: var(--main-color);
+    outline: none;
+    border: none;
+    width: 140px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    cursor: pointer;
+    font-size: 16px;
+    color: #222;
+}
+
+
+/* Back To Top */
+.back_to_top {
+    background: #4d5669;
+}
+.back_to_top p {
+    padding: 14px 0;
+    color: #fff;
+    font-size: 16px;
+    font-weight: normal;
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+
+/* Responsive */
+
+@media (max-width:992px) {
+    .newsletter .container {
+        flex-direction: column;
+        gap: 25px;
+    }
+    .newsletter .container .text {
+        width: 100%;
+    }
+    .newsletter .newsletter_form {
+        width: 70%;
+    }
+}
+
+@media (max-width:500px) {
+    .newsletter .text h4 {
+        font-size: 18px;
+    }
+    .newsletter .text p {
+        font-size: 12px;
+    }
+    .newsletter .text h6 {
+        font-size: 14px;
+    }
+    .newsletter form.newsletter_form {
+        width: 100%;
+    }
+    .newsletter form.newsletter_form button {
+        width: 100px;
+        font-size: 13px;
+    }
+    .newsletter form.newsletter_form input {
+        padding: 10px 125px 10px 10px;
+    }
+}

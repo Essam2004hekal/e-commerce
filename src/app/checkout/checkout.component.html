@@ -1,0 +1,64 @@
+<app-header (cartClicked)="onCartClicked()"></app-header>
+<div *ngIf="isComponentVisible">
+    <app-cart (close)="hideComponent()"></app-cart>
+</div>
+
+
+
+<div class="checkout">
+    <div class="container">
+        <form action="">
+            <div class="address">
+                <h2>delivery Address</h2>
+
+                <div class="inputs">
+                    <label for="">Email</label>
+                    <input type="email" name="" id="" placeholder="Enter Your Email">
+
+                    <label for="">Name</label>
+                    <input type="text" name="" id="" placeholder="Enter Your Name">
+                    
+                    <label for="">Address</label>
+                    <input type="text" name="" id="" placeholder="Enter Your Address">
+                    
+                    <label for="">Phone</label>
+                    <input type="number" name="" id="" placeholder="Enter Your Phone">
+                    
+                </div>
+            </div>
+
+            <div class="coupon">
+                <h2>Coupon Code</h2>
+                <div class="inputs">
+                    <label for="">Coupon Code</label>
+                    <input type="text"  placeholder="Enter Your Coupon Code">
+                </div>
+            </div>
+        </form>
+
+        <div class="order_summary">
+            <h1>Order Summary</h1>
+
+            <div class="items">
+                <div class="item_cart" *ngFor="let item of cartItems; let i = index">
+                    <img [src]="item.img" alt="">
+
+                    <div class="content">
+                        <h4>{{item.name}}</h4>
+                        <p class="price_cart">Price: <span>${{item.price}}</span></p>
+                    </div>
+                </div>
+
+
+                <div class="total">
+                    <p>Total:</p>
+                    <span>${{ getTotalPrice() }}</span>
+                </div>
+
+                <div class="button_div">
+                    <button>Place Order</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

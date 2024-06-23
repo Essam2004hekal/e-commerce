@@ -1,0 +1,92 @@
+/* features */
+
+
+.features {
+    margin: 50px 0;
+}
+.features .container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 20px 10px 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    flex-wrap: wrap;
+}
+.features .feature_item {
+    width: 14%;
+    min-width: 180px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.features .feature_item img {
+    width: 50px;
+}
+.features .feature_item h4 {
+    margin-bottom: 8px;
+    font-size: 15px;
+}
+.features .feature_item p {
+    font-size: 12px;
+}
+
+
+/* Banner */
+
+.banner {
+    margin: 50px 0;
+}
+.banner .container {
+    display: flex;
+    justify-content: space-between;
+}
+.banner .banner_img {
+    width: 31%;
+    position: relative;
+}
+.banner .banner_img img {
+    width: 100%;
+}
+.banner .glass_hover {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+.banner .glass_hover::after {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(50deg , transparent 50% ,
+    rgba(255,255,255,0.1) 60% , rgba(255,255,255,0.5) 70% , 
+    transparent 71%);
+    background-size: 200% 100%;
+    background-position: 200% 0;
+    transition: 0.8s;
+}
+.banner .banner_img:hover .glass_hover::after {
+    background-position: -20% 0;
+}
+.banner .banner_img a {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+@media (max-width: 992px) {
+    .features .container {
+        justify-content: center;
+    }
+    .features .feature_item {
+        margin-bottom: 10px;
+        flex-direction: column;
+        text-align: center;
+    }
+}

@@ -1,0 +1,133 @@
+/* Sale Products */
+
+/* Top */
+.slide {
+    margin-bottom: 80px;
+}
+.top_slide {
+    position: relative;
+    margin-bottom: 15px;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+.top_slide::after {
+    position: absolute;
+    content: '';
+    bottom: -1px;
+    left: 0;
+    width: 80px;
+    height: 2px;
+    background: var(--main-color);
+}
+.top_slide h4 {
+    text-transform: capitalize;
+}
+.top_slide h2 span {
+    font:normal;
+}
+
+/* Product Style */
+.product {
+    position: relative;
+    background: #fff;
+    padding: 20px 30px;
+    text-align: center;
+    overflow: hidden;
+    box-shadow: 5px 5px 10px #94949428;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    width: 100%;
+}
+.product .sale_present {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 2;
+    background-color: var(--dark-red);
+    color: #fff;
+    padding: 3px 10px;
+    font-size: 14px;
+}
+.product .img_product {
+    position: relative;
+}
+.product .img_product img {
+    width: 100%;
+    transition: 0.3s ease-in-out;
+}
+.product .img_product .img_hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    scale: 0.1;
+}
+.product:hover .img_product img {
+    opacity: 0;
+}
+.product:hover .img_product .img_hover {
+    opacity: 1;
+    scale: 1;
+}
+.product .name_product {
+    font-size: 14px;
+}
+.product .name_product a {
+    color: var(--name-item);
+}
+.product .name_product a:hover {
+    text-decoration: underline;
+}
+.product .stars {
+    margin: 10px 0;
+}
+.product .stars svg {
+    color: var(--main-color);
+}
+.product .price {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+}
+.product .price p {
+    color: var(--main-color);
+    font-weight: normal;
+}
+.product .old_price {
+    color: var(--txt-color);
+    text-decoration: line-through;
+    font-size: 12px;
+    font-weight: normal;
+}
+.product .icons {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: absolute;
+    right: -40px;
+    z-index: 3;
+    top: 38%;
+    transform: translateY(-38%);
+    transition: 0.3s ease-in-out;
+}
+.product .icons svg {
+    color: var(--dark-color);
+    background: #fff;
+    width: 17px;
+    height: 17px;
+    line-height: 17px;
+    padding: 7px;
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.product .icons svg:hover {
+    background: var(--main-color);
+}
+.product:hover .icons {
+    right: 10px;
+}
