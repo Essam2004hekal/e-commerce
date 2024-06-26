@@ -232,7 +232,7 @@ header .links .btn_open_menu {
         width: 100%;
     }
     header .top-nav .search input {
-        padding: 10px 100px 10px 15px;
+        padding: 7px 100px 7px 11px;
     }
     header .top-nav .search button {
         width: 100px;
@@ -241,5 +241,30 @@ header .links .btn_open_menu {
     header .links ul {
         width: 100%;
         left: -100%;
+    }
+    header .top-nav .logo img {
+        width: 110px;
+    }
+    header .top-nav .cart-header svg {
+        font-size: 18px;
+        width: 24px;
+        height: 24px;
+        padding: 7px;
+        line-height: 40px;
+    }
+    header .top-nav .cart-header .count_item {
+        width: 17px;
+        height: 17px;
+        line-height: 17px;
+        font-size: 13px;
+        top: -5px;
+        right: 0;
+    }
+    header .top-nav .cart-header .total_price p {
+        font-size: 15px;
+    }
+    header .links .loging_signup a {
+        padding: 7px 15px;
+        margin-left: 10px;
     }
 }

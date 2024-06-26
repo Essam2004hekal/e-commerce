@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import Swal from 'sweetalert2';
 
 @Injectable({
   providedIn: 'root'
@@ -21,9 +22,27 @@ export class CartService {
 
   addToCart(item: any) {
     const currentItems = this.cartItems.value;
+
+    const itemExists = currentItems.find(cartItem => cartItem.id === item.id);
+    
+    if (itemExists) {
+      Swal.fire({
+        icon: 'warning',
+        title: 'Product already in cart',
+        text: 'This product is already in the cart.'
+      });
+      return;
+    }
+
     const updatedItems = [...currentItems, item];
     this.cartItems.next(updatedItems);
     this.updateLocalStorage(updatedItems);
+
+    Swal.fire({
+      icon: 'success',
+      title: 'Product added to cart',
+      text: 'The product has been added to your cart.'
+    });
   }
 
   removeFromCart(index: number) {

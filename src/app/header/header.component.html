@@ -6,8 +6,8 @@
             <button type="submit">Search</button>
         </form>
         <div class="search-results" *ngIf="searchResults.length">
-            <ul *ngFor="let product of products">
-              <li *ngFor="let result of searchResults" routerLink="/product-details" (click)="viewProduct(product.id)">
+            <ul>
+              <li *ngFor="let result of searchResults" routerLink="/product-details" (click)="viewProduct(result.id)">
                 {{ result.name }}
                 </li>
             </ul>
