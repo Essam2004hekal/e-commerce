@@ -48,6 +48,23 @@
 .checkout form .inputs input::placeholder {
     font-size: 13px;
 }
+.checkout .button_div button {
+    width: 100%;
+    background: var(--main-color);
+    color:var(--dark-color);
+    border: 2px solid var(--main-color);
+    padding: 13px 0;
+    outline: none;
+    border-radius: 5px;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+.checkout .button_div button:hover {
+    background: transparent;
+    color: var(--main-color);
+}
 
 
 .checkout .order_summary {
@@ -65,7 +82,7 @@
     display: flex;
     align-items: center;
     gap: 15px;
-    margin-bottom: 14px;
+    margin-bottom: 30px;
 }
 .checkout .order_summary .items .item_cart img {
     width: 150px;
@@ -78,6 +95,31 @@
 .checkout .order_summary .items .item_cart p {
     color: var(--dark-color);
     font-size: 16px;
+}
+.checkout .order_summary .price_cart {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.checkout .order_summary .quantity {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.checkout .order_summary .quantity button {
+    padding: 3px 10px;
+    background: transparent;
+    border: 1px solid var(--main-color);
+    border-radius: 10px;
+    outline: none;
+    transition: 0.3s ease-in-out;
+    font-weight: bold;
+}
+.checkout .order_summary .quantity button:hover {
+    background: var(--main-color);
+}
+.checkout .order_summary .quantity span {
+    font-size: 20px;
 }
 .checkout .order_summary .total {
     margin-bottom: 14px;
@@ -163,6 +205,9 @@
         font-size: 18px;
     }
     .checkout .order_summary .button_div button {
+        font-size: 15px;
+    }
+    .checkout .button_div button {
         font-size: 15px;
     }
     .checkout form h2 {
